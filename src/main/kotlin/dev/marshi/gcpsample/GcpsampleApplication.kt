@@ -15,6 +15,6 @@ fun main(args: Array<String>) {
 @Component
 class Runner : CommandLineRunner {
   override fun run(vararg args: String?) {
-    println("hello GCP!!")
+    println("hello GCP CI!!")
   }
 }
