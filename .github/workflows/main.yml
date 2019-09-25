@@ -16,4 +16,4 @@ jobs:
         echo Add other action to build,
         echo test, and deploy your project.
     - name: pr
-    - run: sh ./.github/workflows/pr.sh
+      run: sh ./.github/workflows/pr.sh
