@@ -16,4 +16,4 @@ jobs:
         echo Add other action to build,
         echo test, and deploy your project.
     - name: auto pr
-      uses: pr.sh
+      uses: ./.github/workflows/pr.sh
