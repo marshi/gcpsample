@@ -1,0 +1,7 @@
+name: auto pr
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run a one-line script
+      run: sh ./.github/workflows/pr.sh
