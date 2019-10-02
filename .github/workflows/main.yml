@@ -18,3 +18,4 @@ jobs:
       - uses: ./.github/workflows/pr
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_EVENT_PATH: ${{ GITHUB_EVENT_PATH }}
