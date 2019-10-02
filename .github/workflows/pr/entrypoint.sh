@@ -2,7 +2,7 @@
 
 set -e
 
-echo helloooo
+echo hellooo
 
 if [[ -z "$GITHUB_TOKEN" ]]; then
 	echo "Set the GITHUB_TOKEN env variable."
