@@ -13,7 +13,6 @@ jobs:
       run: echo Hello github action ${{ github.event.action }}
     - name: Run a multi-line script
       run: |
-        echo Add other actions to build,
+        echo Add other action to build,
         echo test, and deploy your project.
-    - name: auto pr
-      uses: pr.sh
+    - uses: .github/workflows/pr
