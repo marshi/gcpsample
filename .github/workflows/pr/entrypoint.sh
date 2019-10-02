@@ -10,9 +10,9 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
 fi
 
 echo $(jq -r ".created" "$GITHUB_EVENT_PATH")
-if [[ "$(jq -r ".created" "$GITHUB_EVENT_PATH")" == false ]]; then
-	echo "This is not a create push branch!"
-	exit 78
+if [[ "$(jq -r ".created" "$GITHUB_EVENT_PATH")" == true ]]; then
+	echo "This is a create push branch!"
+	exit 1
 fi
 
 if [[ "$(jq -r ".head_commit" "$GITHUB_EVENT_PATH")" == "null" ]]; then
