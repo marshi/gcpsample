@@ -1,8 +1,6 @@
 # action.yml
 name: 'pr'
 description: 'pr'
-inputs:
-outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
