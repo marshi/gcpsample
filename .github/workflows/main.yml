@@ -17,4 +17,4 @@ jobs:
           echo test, and deploy your project.
       - uses: ./.github/workflows/pr
         env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
