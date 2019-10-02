@@ -1,6 +1,8 @@
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Run a one-line script
-      run: sh .github/workflows/pr.sh
+# action.yml
+name: 'pr'
+description: 'pr'
+inputs:
+outputs:
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
