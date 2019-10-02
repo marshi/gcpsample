@@ -9,10 +9,9 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
 	exit 1
 fi
 
-echo $(jq -r ".created" "$GITHUB_EVENT_PATH")
 if [[ "$(jq -r ".created" "$GITHUB_EVENT_PATH")" == true ]]; then
 	echo "This is a create push branch!"
-	exit 1
+	exit 0
 fi
 
 if [[ "$(jq -r ".head_commit" "$GITHUB_EVENT_PATH")" == "null" ]]; then
@@ -26,10 +25,7 @@ echo "Commit message:"
 echo "$commit_message"
 
 REPO_FULLNAME=$(jq -r ".repository.full_name" "$GITHUB_EVENT_PATH")
-
 DEFAULT_BRANCH=$(jq -r ".repository.default_branch" "$GITHUB_EVENT_PATH")
-echo "Creating new PR for $REPO_FULLNAME..."
-
 URI=https://api.github.com
 PULLS_URI="${URI}/repos/$REPO_FULLNAME/pulls"
 AUTH_HEADER="Authorization: token $GITHUB_TOKEN"
