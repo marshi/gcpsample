@@ -32,7 +32,7 @@ echo "Creating new PR for $REPO_FULLNAME..."
 
 URI=https://api.github.com
 PULLS_URI="${URI}/repos/$REPO_FULLNAME/pulls"
-API_HEADER="Accept: application/vnd.github.shadow-cat-preview"
+API_HEADER=""
 AUTH_HEADER="Authorization: token $GITHUB_TOKEN"
 
 new_pr_resp=$(curl --data "{\"title\":\"$commit_message\", \"head\": \"$GITHUB_REF\", \"draft\": true, \"base\": \"$DEFAULT_BRANCH\"}" -X POST -s -H "${AUTH_HEADER}" -H "${API_HEADER}" ${PULLS_URI})
