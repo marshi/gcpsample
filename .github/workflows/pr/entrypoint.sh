@@ -9,6 +9,7 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
 	exit 1
 fi
 
+echo $GITHUB_EVENT_PATH
 if [[ "$(jq -r ".created" "$GITHUB_EVENT_PATH")" != true ]]; then
 	echo "This is not a create push branch!"
 	exit 78
