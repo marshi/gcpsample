@@ -28,7 +28,7 @@ URI=https://api.github.com
 PULLS_URI="${URI}/repos/$REPO_FULLNAME/pulls"
 AUTH_HEADER="Authorization: token $GITHUB_TOKEN"
 TITLE="release to ${DEFAULT_BRANCH}"
-BODY="this pull request is created by github actions."
+BODY="this pull request is auto created by github actions."
 
 new_pr_resp=$(curl --data "{\"title\":\"$TITLE\", \"head\": \"$GITHUB_REF\", \"body\": \"$BODY\", \"draft\": false, \"base\": \"$DEFAULT_BRANCH\"}" -X POST -s -H "${AUTH_HEADER}" ${PULLS_URI})
 
